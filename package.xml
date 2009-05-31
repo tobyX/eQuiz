@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "DTD/package.dtd">
+<package name="com.toby.wbb.equiz">
+
+	<packageInformation>
+		<packageName>eQuiz</packageName>
+		<packageDescription>Ein Quizsystem fürs WBB3</packageDescription>
+		<unique>1</unique>
+		<version>0.9.0</version>
+		<date>2008-06-03</date>
+		<plugin>com.woltlab.wbb</plugin>
+	</packageInformation>
+
+	<authorInformation>
+		<author>Tobias Friebel</author>
+		<authorURL>http://wbbmods.tobyf.de/trac/wiki/eQuiz</authorURL>
+		<license>CC Namensnennung-Keine kommerzielle Nutzung-Keine Bearbeitung</license>
+		<licenseURL>http://creativecommons.org/licenses/by-nc-nd/2.0/de/</licenseURL>
+	</authorInformation>
+
+	<requiredpackages>
+		<requiredpackage minversion="3.0.5">com.woltlab.wbb</requiredpackage>
+		<requiredpackage minversion="0.9.0" file="requirements/com.toby.wcf.equiz.tar.gz">com.toby.wcf.equiz</requiredpackage>
+	</requiredpackages>
+
+	<instructions type="install">
+		<languages languagecode="de">de.utf-8.xml</languages>
+		<languages languagecode="de-informal">de-informal.utf-8.xml</languages>
+		<files>files.tar</files>
+		<eventlistener>eventlistener.xml</eventlistener>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<sql>install.sql</sql>
+		<templatepatch>template.diff</templatepatch>
+	</instructions>
+
+	<instructions type="update" fromversion="0.7.0">
+		<files>files.tar</files>
+	</instructions>
+
+</package>

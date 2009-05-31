@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<import>
+		<eventlistener>
+			<eventClassName>BoardPage</eventClassName>
+			<eventName>readData</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizBoardViewListener.class.php</listenerClassFile>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>BoardPage</eventClassName>
+			<eventName>assignVariables</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizBoardViewListener.class.php</listenerClassFile>
+		</eventlistener>
+
+		<eventlistener>
+			<eventClassName>ThreadPage</eventClassName>
+			<eventName>readData</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizThreadViewListener.class.php</listenerClassFile>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>ThreadPage</eventClassName>
+			<eventName>assignVariables</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizThreadViewListener.class.php</listenerClassFile>
+		</eventlistener>
+
+		<eventlistener>
+			<eventClassName>ThreadAddForm</eventClassName>
+			<eventName>show</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizThreadAddListener.class.php</listenerClassFile>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>ThreadAddForm</eventClassName>
+			<eventName>assignVariables</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizThreadAddListener.class.php</listenerClassFile>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>ThreadAddForm</eventClassName>
+			<eventName>submit</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizThreadAddListener.class.php</listenerClassFile>
+		</eventlistener>
+
+		<eventlistener>
+			<eventClassName>PostEditForm</eventClassName>
+			<eventName>show</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizPostEditListener.class.php</listenerClassFile>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>PostEditForm</eventClassName>
+			<eventName>assignVariables</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizPostEditListener.class.php</listenerClassFile>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>PostEditForm</eventClassName>
+			<eventName>submit</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizPostEditListener.class.php</listenerClassFile>
+		</eventlistener>
+
+		<eventlistener>
+			<eventClassName>BoardAddForm</eventClassName>
+			<eventName>assignVariables</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizACPListener.class.php</listenerClassFile>
+			<environment>admin</environment>
+			<inherit>1</inherit>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>BoardAddForm</eventClassName>
+			<eventName>readFormParameters</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizACPListener.class.php</listenerClassFile>
+			<environment>admin</environment>
+			<inherit>1</inherit>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>BoardAddForm</eventClassName>
+			<eventName>save</eventName>
+			<listenerClassFile>lib/system/event/listener/EQuizACPListener.class.php</listenerClassFile>
+			<environment>admin</environment>
+			<inherit>1</inherit>
+		</eventlistener>
+	</import>
+</data>

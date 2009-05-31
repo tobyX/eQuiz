@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "DTD/language.dtd">
+<language languagecode="de-informal">
+
+	<category name="wbb.acp.board">
+		<item name="wbb.acp.board.eQuizBoard"><![CDATA[eQuiz - Forum]]></item>
+		<item name="wbb.acp.board.eQuizBoard.description"><![CDATA[Soll dieses Forum als Quizforum benutzt werden?]]></item>
+	</category>
+
+</language>

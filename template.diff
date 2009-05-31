@@ -1,0 +1,10 @@
+--- ../../WBB-WCF/wbb/templates/thread.tpl	2008-05-23 00:36:54.000000000 +0200
++++ thread.tpl	2008-05-23 00:36:37.000000000 +0200
+@@ -312,6 +312,7 @@
+ 
+ 							<div class="messageBody" id="postText{@$post->postID}">
+ 								{include file='pollShow'}
++								{include file='eQuizShow'}
+ 								{@$post->getFormattedMessage()}
+ 							</div>
+ 

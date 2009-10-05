@@ -3,8 +3,7 @@
 <language languagecode="de-informal">
 
 	<category name="wbb.acp.board">
-		<item name="wbb.acp.board.eQuizBoard"><![CDATA[eQuiz - Forum]]></item>
-		<item name="wbb.acp.board.eQuizBoard.description"><![CDATA[Soll dieses Forum als Quizforum benutzt werden?]]></item>
+		<item name="wbb.acp.board.eQuizBoard"><![CDATA[In diesem Forum können Quizze eingestellt werden]]></item>
 	</category>
 
 </language>

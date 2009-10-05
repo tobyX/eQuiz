@@ -45,7 +45,7 @@ class EQuizACPListener implements EventListener
 					));
 				}
 
-				WCF::getTPL()->append('additionalFields', WCF::getTPL()->fetch('eQuizACP'));
+				WCF::getTPL()->append('additionalSettings', WCF::getTPL()->fetch('eQuizACP'));
 			break;
 		}
 	}

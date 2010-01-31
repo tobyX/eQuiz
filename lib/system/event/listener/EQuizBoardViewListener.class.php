@@ -24,27 +24,33 @@ class EQuizBoardViewListener implements EventListener
 		switch ($eventName)
 		{
 				case 'readData':
-					$eventObj->threadList->sqlSelects .= 'eQuiz.eQuizSeverity,';
+					$eventObj->threadList->sqlSelects .= 'eQuiz.eQuizSeverity, eQuizVoted.userID AS hasVoted, ';
 					$eventObj->threadList->sqlJoins .= "	LEFT JOIN 	wcf".WCF_N."_poll eQuiz
-						ON 		(eQuiz.messageID = thread.firstPostID
-								AND eQuiz.messageType = 'eQuiz')";
+													ON 	(eQuiz.messageID = thread.firstPostID
+														AND eQuiz.messageType = 'eQuiz')
+													LEFT JOIN 	wcf".WCF_N."_poll_vote eQuizVoted
+													ON	(eQuizVoted.pollID = eQuiz.pollID 
+														AND eQuizVoted.userID = ".WCF::getUser()->userID.")";
 				break;
 
 				case 'assignVariables':
+					$eventObj->board->enableMarkingAsDone = 1;
 					foreach ($eventObj->threadList->threads as $id => $thread)
 					{
-						if ($thread->eQuizSeverity !== NULL && ($thread->eQuizSeverity > 0 || $thread->eQuizSeverity < 6))
+						if ($thread->eQuizSeverity !== NULL && ($thread->eQuizSeverity > 0 || $thread->eQuizSeverity < 6) && $thread->polls > 0)
 						{
 							$eventObj->threadList->threads[$id]->prefix .= ' ['.WCF :: getLanguage()->get('wcf.equiz.severity.'.$thread->eQuizSeverity).']';
 							$eventObj->threadList->threads[$id]->firstPostPreview = '';
+							$eventObj->threadList->threads[$id]->isDone = ($eventObj->threadList->threads[$id]->userID != WCF::getUser()->userID ? (bool)$thread->hasVoted : 1);
 						}
 					}
 					foreach ($eventObj->threadList->topThreads as $id => $thread)
 					{
-						if ($thread->eQuizSeverity !== NULL && ($thread->eQuizSeverity > 0 || $thread->eQuizSeverity < 6))
+						if ($thread->eQuizSeverity !== NULL && ($thread->eQuizSeverity > 0 || $thread->eQuizSeverity < 6) && $thread->polls > 0)
 						{
 							$eventObj->threadList->topThreads[$id]->prefix .= ' ['.WCF :: getLanguage()->get('wcf.equiz.severity.'.$thread->eQuizSeverity).']';
 							$eventObj->threadList->topThreads[$id]->firstPostPreview = '';
+							$eventObj->threadList->topThreads[$id]->isDone = ($eventObj->threadList->threads[$id]->userID != WCF::getUser()->userID ? (bool)$thread->hasVoted : 1);
 						}
 					}
 				break;

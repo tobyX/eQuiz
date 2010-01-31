@@ -5,23 +5,25 @@
 	<packageInformation>
 		<packageName>eQuiz</packageName>
 		<packageDescription>Ein Quizsystem fürs WBB3</packageDescription>
-		<unique>1</unique>
-		<version>0.9.0</version>
-		<date>2008-06-03</date>
+		<packageURL>http://www.enigma-forum.de/board220-tobys-wbb-ecke/</packageURL>
+		<version>1.0.0</version>
+		<date>2010-01-31</date>
 		<plugin>com.woltlab.wbb</plugin>
 	</packageInformation>
 
 	<authorInformation>
 		<author>Tobias Friebel</author>
-		<authorURL>http://wbbmods.tobyf.de/trac/wiki/eQuiz</authorURL>
-		<license>CC Namensnennung-Keine kommerzielle Nutzung-Keine Bearbeitung</license>
-		<licenseURL>http://creativecommons.org/licenses/by-nc-nd/2.0/de/</licenseURL>
+		<authorURL>http://www.enigma-forum.de/</authorURL>
 	</authorInformation>
 
 	<requiredpackages>
-		<requiredpackage minversion="3.0.5">com.woltlab.wbb</requiredpackage>
-		<requiredpackage minversion="0.9.0" file="requirements/com.toby.wcf.equiz.tar.gz">com.toby.wcf.equiz</requiredpackage>
+		<requiredpackage minversion="3.1.1">com.woltlab.wbb</requiredpackage>
+		<requiredpackage minversion="1.0.0" file="requirements/com.toby.wcf.equiz.tar">com.toby.wcf.equiz</requiredpackage>
 	</requiredpackages>
+	
+	<optionalpackages>
+		<optionalpackage file="optionals/com.toby.wbb.equiz-guthaben.tar">com.toby.wbb.equiz-guthaben</optionalpackage>
+	</optionalpackages>
 
 	<instructions type="install">
 		<languages languagecode="de">de.utf-8.xml</languages>
@@ -33,8 +35,11 @@
 		<templatepatch>template.diff</templatepatch>
 	</instructions>
 
-	<instructions type="update" fromversion="0.7.0">
+	<instructions type="update" fromversion="0.9*">
 		<files>files.tar</files>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<languages languagecode="de">de.utf-8.xml</languages>
+		<languages languagecode="de-informal">de-informal.utf-8.xml</languages>
 	</instructions>
 
 </package>

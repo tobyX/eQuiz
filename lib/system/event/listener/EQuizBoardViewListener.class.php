@@ -44,13 +44,18 @@ class EQuizBoardViewListener implements EventListener
 							$eventObj->threadList->threads[$id]->isDone = ($eventObj->threadList->threads[$id]->userID != WCF::getUser()->userID ? (bool)$thread->hasVoted : 1);
 						}
 					}
-					foreach ($eventObj->threadList->topThreads as $id => $thread)
+
+					//for WBB Lite
+					if (isset($eventObj->threadList->topThreads)
 					{
-						if ($thread->eQuizSeverity !== NULL && ($thread->eQuizSeverity > 0 || $thread->eQuizSeverity < 6) && $thread->polls > 0)
+						foreach ($eventObj->threadList->topThreads as $id => $thread)
 						{
-							$eventObj->threadList->topThreads[$id]->prefix .= ' ['.WCF :: getLanguage()->get('wcf.equiz.severity.'.$thread->eQuizSeverity).']';
-							$eventObj->threadList->topThreads[$id]->firstPostPreview = '';
-							$eventObj->threadList->topThreads[$id]->isDone = ($eventObj->threadList->threads[$id]->userID != WCF::getUser()->userID ? (bool)$thread->hasVoted : 1);
+							if ($thread->eQuizSeverity !== NULL && ($thread->eQuizSeverity > 0 || $thread->eQuizSeverity < 6) && $thread->polls > 0)
+							{
+								$eventObj->threadList->topThreads[$id]->prefix .= ' ['.WCF :: getLanguage()->get('wcf.equiz.severity.'.$thread->eQuizSeverity).']';
+								$eventObj->threadList->topThreads[$id]->firstPostPreview = '';
+								$eventObj->threadList->topThreads[$id]->isDone = ($eventObj->threadList->threads[$id]->userID != WCF::getUser()->userID ? (bool)$thread->hasVoted : 1);
+							}
 						}
 					}
 				break;

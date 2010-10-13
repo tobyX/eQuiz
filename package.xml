@@ -6,8 +6,8 @@
 		<packageName>eQuiz</packageName>
 		<packageDescription>Ein Quizsystem fürs WBB3</packageDescription>
 		<packageURL>http://www.enigma-forum.de/board220-tobys-wbb-ecke/</packageURL>
-		<version>1.0.1</version>
-		<date>2010-01-31</date>
+		<version>1.0.2</version>
+		<date>2010-10-13</date>
 		<plugin>com.woltlab.wbb</plugin>
 	</packageInformation>
 
@@ -17,7 +17,7 @@
 	</authorInformation>
 
 	<requiredpackages>
-		<requiredpackage minversion="3.1.1">com.woltlab.wbb</requiredpackage>
+		<requiredpackage>com.woltlab.wbb</requiredpackage>
 		<requiredpackage minversion="1.0.1" file="requirements/com.toby.wcf.equiz.tar">com.toby.wcf.equiz</requiredpackage>
 	</requiredpackages>
 	

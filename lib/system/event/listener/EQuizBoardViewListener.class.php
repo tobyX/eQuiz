@@ -46,7 +46,7 @@ class EQuizBoardViewListener implements EventListener
 					}
 
 					//for WBB Lite
-					if (isset($eventObj->threadList->topThreads)
+					if (isset($eventObj->threadList->topThreads))
 					{
 						foreach ($eventObj->threadList->topThreads as $id => $thread)
 						{
